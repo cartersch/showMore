@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>showMore Jquery Plugin</title>
+      <link rel="stylesheet" href="example.css" />
+   </head>
+   <body>
+      <header>
+         <h1>showMore Jquery Plugin Examples</h1>
+      </header>
+      <section>
+         <div class="containerDiv1">
+            <div class="innerDiv1">
+               <h3>showMore link reveals more content</h3>
+               <p>This is a section that contains an inner element that is larger than it's parent. The inner element has a couple of different tag styles in it with varying font sizes, padding, etc. The height of this inner div can vary.  If the height of the inner div is less than the height of the parent div, then no link will show since all the inner content can be seen.  However, when the content of the inner div is too long to show all the content in the parent div, then the plugin will measure the heights of the elements and figure out which one will be displayed.</p>
+               <p>If there are multiple items in the inner content.  The plugin will adjust the height of the last visible element and set it to an overflow of "hidden" while also setting any other elements further down the tree to a display of "none."  Clicking the 'Show More' link that is created by the plugin will reveal the entire content of the the inner div.</p>
+               <p>This plugin has three options:</p>
+               <ul>
+                  <li><b>link:</b> This sets the href value of the link.  by default it is set to 'javascript:void(0)' so that it goes nowhere and does not add a hashtag to the url</li>
+                  <li><b>styleClass:</b> If you want to apply a specific style to this links you may do so by adding a class name.  This class name will go on the span around the link.</li>
+                  <li><b>linkText:</b> If you want to make the link to text read a specific way, you can use this option.</li>
+               </ul>
+            </div><!--innerDiv1-->
+         </div><!--containerDiv1-->
+      </section>
+      
+      <section>
+         <div class="containerDiv2">
+            <div class="innerDiv2">
+               <h3>showMore link to external page</h3>
+               <p>This section has a link that takes you to a different page. In this case, the link will take you to the homepage of github.com, but it could do to any page. To change the behavior of a link just use the 'link' option in the plugin.</p>
+               <p>And the rest of this is just filler...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div><!--innerDiv2-->
+         </div><!--containerDiv2-->
+      </section>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+      <script src="jquery.showMore.js"></script>
+      <script>
+         $(function(){
+            $('.innerDiv1').showMore({linkText : 'Learn more about this plugin'});
+            $('.innerDiv2').showMore({link : 'http://www.github.com', linkText : 'this will take you to github.com'});
+         });
+      </script>
+      
+   </body>
+</html>
